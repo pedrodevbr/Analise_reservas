@@ -21,9 +21,9 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
-    return pd.read_excel(tipo3_file), pd.read_excel(dempro_file)
+    return pd.read_excel(tipo3_file)
     
-tipo3,dempro = load_data()
+tipo3 = load_data()
 
 # adequar tipo de dados da tipo3
 tipo3['Data base'] = pd.to_datetime(tipo3['Data base'])
@@ -137,7 +137,6 @@ print(table)
 print(top_reservas)
 
 st.write(f'#### Resumo das reservas - {centro_custo[0]}')
-
 
 st.write(table)
 
