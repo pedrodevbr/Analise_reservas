@@ -139,13 +139,8 @@ print(top_reservas)
 
 st.write(f'#### Resumo das reservas - {centro_custo[0]}')
 
-# plot grafico com table
-import matplotlib.pyplot as plt
 
-fig, ax = plt.subplots()
-ax.pie(table.values, labels=table.index, autopct='%1.1f%%')
-ax.set_title(f'Total reservado = ${table[0]+table[1]:,.2f}')
-st.write(fig)
+st.write(table)
 
 st.write('#### Top 5 reservas vencidas')
 st.write(top_reservas)
