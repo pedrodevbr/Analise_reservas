@@ -4,8 +4,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import datetime as dt
-import altair as alt
-import matplotlib.pyplot as plt
+
 
 # Set the directory path
 
