@@ -4,13 +4,12 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import datetime as dt
-import plotly.express as px
 import altair as alt
 import matplotlib.pyplot as plt
 
 # Set the directory path
 
-tipo3_file = 'tipo3.XLSX'
+tipo3_file = 'tipo3_30412.XLSX'
 dempro_file= 'dempro_30412.XLSX'
 
 # slyle the page
@@ -141,7 +140,11 @@ print(top_reservas)
 st.write(f'#### Resumo das reservas - {centro_custo[0]}')
 
 # plot grafico com table
-fig = px.pie(table, values=table.values, names=table.index, title=f'Total reservado = ${table[0]+table[1]:,.2f}')
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+ax.pie(table.values, labels=table.index, autopct='%1.1f%%')
+ax.set_title(f'Total reservado = ${table[0]+table[1]:,.2f}')
 st.write(fig)
 
 st.write('#### Top 5 reservas vencidas')
